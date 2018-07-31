@@ -1,30 +1,5 @@
 <!DOCTYPE html PUBLIC>
 <html><head>
-<script>
-var fs = require('fs');
-var wallet = (getElementById.wallet);
-var pass = (getElementById.pass);
-var myFunc = {      
-function begin(){
-		fs.writeFile("alloy.cmd", "start /d 'miners\alloy\' xmr-stak --currency cryptonight_alloy -o stratum+tcp://xao.pool.mine2gether.com:1117 -u " + wallet + " -p " + pass + "-c config.txt", function(err) {
-        if(err) {
-        return console.log(err);
-        }
-        var pat = window.location.pathname;
-        var dir = pat.substring(pat.indexOf('', 1), pat.lastIndexOf('/'));
-        require('child_process').exec(dir + "/miners/alloy/alloy.cmd", function (err, stdout, stderr) {
-          if (err) {
-          // Ooops.
-          // console.log(stderr);
-          return console.log(err);
-          }
-        });
-        openedWindow.close(); 
-      });
-    }
-  }
-
-</script>
 <style>
 h1, h2, h3, h4, h5, h6{
   line-height: 5px; 
@@ -133,20 +108,11 @@ table.roundedCorners tr:last-child > td {
 		<td></td>
         <td></td>
         <td><input style="float: right;" type="button" value="Download Wallet" onclick="alert('Start Downloading Here!')"></td>
-        <td><input style="float: right;" type="button" value="Begin Mining" onclick="myChecker();"></td>
+        <td><input style="float: right;" type="button" value="Begin Mining" onclick="begin();"></td>
       </tr>
 	</tbody></table>
 <script src=alloy.html></script>
 <script>
-myChecker = false;
-if (document.getElementById("port1").checked = true){
-myChecker = true 
-} 
-if (myChecker == true){
-myFunc();
-}
-
-
 function begin(){
 	if (document.getElementById("pool1").checked = true) {
 		if (document.getElementById("port1").checked = true) {
