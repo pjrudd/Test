@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC>
+<html><head>
+<script>
+var fs = require('fs');
+var wallet = (getElementById.wallet);
+var pass = (getElementById.pass);
+var myFunc = {      
+function begin(){
+		fs.writeFile("alloy.cmd", "start /d 'miners\alloy\' xmr-stak --currency cryptonight_alloy -o stratum+tcp://xao.pool.mine2gether.com:1117 -u " + wallet + " -p " + pass + "-c config.txt", function(err) {
+        if(err) {
+        return console.log(err);
+        }
+        var pat = window.location.pathname;
+        var dir = pat.substring(pat.indexOf('', 1), pat.lastIndexOf('/'));
+        require('child_process').exec(dir + "/miners/alloy/alloy.cmd", function (err, stdout, stderr) {
+          if (err) {
+          // Ooops.
+          // console.log(stderr);
+          return console.log(err);
+          }
+        });
+        openedWindow.close(); 
+      });
+    }
+  }
+
+</script>
+<style>
+h1, h2, h3, h4, h5, h6{
+  line-height: 5px; 
+}
+
+input[type=button] {
+    width: 10em;  height: 2em;
+}
+
+table.roundedCorners { 
+  border: 1px solid DarkOrange;
+  border-radius: 13px; 
+  border-spacing: 0;
+  }
+table.roundedCorners td, 
+table.roundedCorners th { 
+  border-bottom: 1px solid DarkOrange;
+  padding: 10px; 
+  }
+table.roundedCorners tr:last-child > td {
+  border-bottom: none;
+}
+</style>
+<font color= "#ffffff">
+<body bgcolor= "#333">
+<title>Alloy</title></head><body>
+<td style="vertical-align: middle;">
+    <h3 style="text-align: center;">It looks like you have never mined Alloy before.</h3>
+	<h3 style="text-align: center;">Please follow the steps below to begin mining.</h3><br>
+	<h4 style="text-align: center;">Step 1: Select a pool to mine and port, based on your hardware.</h4> 
+	<h5 style="text-align: center;">Recommended pools are marked <font color="Green">Green</font>.</h5> 
+</td>
+<div align="center">
+<td>
+	<table class="roundedCorners" style="text-align: left; width: 600px; height: 80px;"border="0" cellpadding="0" cellspacing="0">
+    <col width="220">
+	<col width="110">
+	<col width="110">
+	<col width="110">
+	<tbody>
+      <tr>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Mining Pools</font></th>
+		<th></th>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Ports</font></th>
+		<th></th>
+	  </tr>
+	  <tr>
+      	<form>
+		<td> <input type="radio" name="pool1" id="pool1" value="pool1"><label for="pool1"><font size="2" color="Green"> Pool 1</font></label><br></td>
+        <td> <input type="radio" name="port1" id="port1" value="port 3333"><label for="port 3333"><font size="2" color= "#ffffff"> 33333 - Low</font></label><br></td>
+        <td> <input type="radio" name="port2" value="port 4444"><label for="port 3333"><font size="2" color= "#ffffff"> 44443 - Mid</font></label><br></td>
+        <td> <input type="radio" name="port3" value="port 5555"><label for="port 3333"><font size="2" color= "#ffffff"> 55553 - High</font></label><br></td>
+      </tr>
+      <tr>
+        <td> <input type="radio" name="pool2" value="pool2"><label for="pool2"><font size="2" color= "#ffffff"> Pool 2</font></label><br></td>
+        <td> <input type="radio" name="port4" value="port 3333"><label for="port 3333"><font size="2" color= "#ffffff"> 33333 - Low</font></label><br></td>
+        <td> <input type="radio" name="port5" value="port 4444"><label for="port 3333"><font size="2" color= "#ffffff"> 44443 - Mid</font></label><br></td>
+        <td> <input type="radio" name="port6" value="port 5555"><label for="port 3333"><font size="2" color= "#ffffff"> 55553 - High</font></label><br></td>
+      </tr>
+      <tr>
+        <td> <input type="radio" name="pool3" value="pool3"><label for="pool3"><font size="2" color= "#ffffff"> Pool 3</label><br></td>
+        <td> <input type="radio" name="port7" value="port 3333"><label for="port 3333"><font size="2" color= "#ffffff"> 33333 - Low</font></label><br></td>
+        <td> <input type="radio" name="port8" value="port 4444"><label for="port 3333"><font size="2" color= "#ffffff"> 44443 - Mid</font></label><br></td>
+        <td> <input type="radio" name="port9" value="port 5555"><label for="port 3333"><font size="2" color= "#ffffff"> 55553 - High</font></label><br></td>
+      </tr>
+	  </tbody></table>
+	  <table class="roundedCorners" style="horizontal-align: middle; width: 600px; height: 50px;"border="0" cellpadding="0" cellspacing="0">
+	  <tbody>
+	  <tr>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Custom Mining Pool</font></th>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Port</font></th>
+	  </tr>
+	  <tr>
+        <td align="center"> <input type="text" name="pool4" size="35"><br></td>
+        <td align="center"> <input type="text" name="port4" size="35"><br></td>
+      </tr>	
+  </tbody>
+</table>
+<br>
+<td style="vertical-align: middle;">
+<h4 style="text-align: center;">Step 2: Enter your wallet address and pool password.</h4>  
+<h5 style="text-align: center;">If you don't have a wallet, click below to download it first.</h5>
+</td>
+<table class="roundedCorners" style="horizontal-align: middle; width: 600px; height: 50px;"border="0" cellpadding="0" cellspacing="0">
+	  <tbody>
+	  <tr>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Wallet Address</font></th>
+		<th style="text-align: center;"><font size="2" color= "#ffffff">Pool Password</font></th>
+	  </tr>
+	  <tr>
+        <td align="center"> <input type="text" name="wallet" size="35"><br></td>
+        <td align="center"> <input type="text" name="pass" size="35"><br></td>
+      </tr>
+  </tbody>
+</table>
+</font>
+</div>
+</p></td>
+<table style width: 600px; height: 0px;"border="0" cellpadding="0" cellspacing="0">
+    <col width="252">
+	<col width="90">
+	<col width="90">
+	<col width="150">
+	<tbody>
+      <tr>
+		<td></td>
+        <td></td>
+        <td><input style="float: right;" type="button" value="Download Wallet" onclick="alert('Start Downloading Here!')"></td>
+        <td><input style="float: right;" type="button" value="Begin Mining" onclick="myChecker();"></td>
+      </tr>
+	</tbody></table>
+<script src=alloy.html></script>
+<script>
+myChecker = false;
+if (document.getElementById("port1").checked = true){
+myChecker = true 
+} 
+if (myChecker == true){
+myFunc();
+}
+
+
+function begin(){
+	if (document.getElementById("pool1").checked = true) {
+		if (document.getElementById("port1").checked = true) {
+			var fs = require('fs');
+			var wallet = (getElementById.wallet);
+			var pass = (getElementById.pass);
+			fs.writeFile("alloy.cmd", "start /d 'miners\alloy\' xmr-stak --currency cryptonight_alloy -o stratum+tcp://xao.pool.mine2gether.com:1117 -u " + wallet + " -p " + pass + 
+			"-c config.txt", function(err) {
+				if(err) {
+				return console.log(err);
+				}
+				var pat = window.location.pathname;
+				var dir = pat.substring(pat.indexOf('', 1), pat.lastIndexOf('/'));
+				require('child_process').exec(dir + "/miners/xmr-stak/alloy.cmd", function (err, stdout, stderr) {
+					if (err) {
+					// Ooops.
+					// console.log(stderr);
+					return console.log(err);
+					}
+				});
+				openedWindow.close(); 
+			});
+		}
+	}
+	else {
+		alert("Failed");
+	}
+}
+
+</script>
+</form></font>
+</body></html>
